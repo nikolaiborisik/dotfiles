@@ -121,7 +121,9 @@ mdd(){
 }
 
 updzsh(){
-    git --git-dir ~/.mydot pull
+    echo "Update git"
+    git --git-dir ~/.mydot/.git pull
+    echo "Git update is  completed"
     sh ~/.mydot/terminal/zsh/update-ohmyzsh.sh
-    echo "Update comlete"
+    echo "Update is comleted"
 }
