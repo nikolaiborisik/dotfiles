@@ -55,7 +55,7 @@
 
     ",o
     
-    " ,p  Вставлять код извне без этой строчки проблематично, без нее начитается
+    ",p  Вставлять код извне без этой строчки проблематично, без нее начитается
         " бешеный реформат кода
         set pastetoggle=<Leader>p
 
@@ -72,11 +72,11 @@
     ",f  Fast grep грепает в текущей директории по слову, на котором стоит курсор
          map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
 
-    " ,g
+    ",g
         "map <Leader>g <Esc>:call ToggleGUINoise()<cr>
     
     " Создаем пустой сплит относительно текущего
-    "h
+    ",h
         nmap <Leader>h :leftabove  vnew<CR>
     ",l
         nmap <Leader>l :rightbelow vnew<CR>
@@ -101,16 +101,16 @@
         nmap <leader>v :tabedit ~/.mydot/vim<CR>
 
 
-    " ,bl show buffers
+    ",bl show buffers
         nmap <Leader>bl :ls<cr>:b
 
-    " ,bp prev buffer
+    ",bp prev buffer
         nmap <Leader>bp :bp<cr>
 
-    " ,bn next buffer
+    ",bn next buffer
         nmap <Leader>bn :bn<cr>
 
-    " ,b
+    ",b
         vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
     " ,nm  Toggle type of line numbers
@@ -123,19 +123,13 @@
 
     "Fix indentation
        map <F7> mzgg=G`z<CR>
-    " Ctrl+s
-       map <C-s> <esc>:w<CR>
-       imap <C-s> <esc>:w<CR>
-
-
+    
     " <Esc><Esc>  Clear the search highlight in Normal mode
         nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
     " < >
         vnoremap < <gv
         vnoremap > >gv
-
-
     
     " Перемещение строк
         " переместить одну строку
