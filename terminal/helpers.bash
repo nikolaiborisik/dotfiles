@@ -141,3 +141,9 @@ dogrunt(){
     npm install grunt-contrib-jshint --save-dev
     npm install grunt-contrib-watch --save-dev
 }
+#git add commit push
+gitacp(){
+    git add .
+    git commit -m 'Update'
+    git push
+}
