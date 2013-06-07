@@ -127,3 +127,17 @@ updzsh(){
     sh ~/.mydot/terminal/zsh/update-ohmyzsh.sh
     echo "Update is comleted"
 }
+
+dogrunt(){
+    echo "\nInstal local grunt\n"
+    npm install grunt
+    echo "\nGenerate grunt's template\n"
+    grunt-init gruntfile
+    echo "\nGenerate node package.json\n"
+    npm init
+    echo "\nInstall grund with dev-dependence and add it to the package.json\n"
+    npm install grunt-contrib-concat --save-dev
+    npm install grunt-contrib-uglify --save-dev
+    npm install grunt-contrib-jshint --save-dev
+    npm install grunt-contrib-watch --save-dev
+}

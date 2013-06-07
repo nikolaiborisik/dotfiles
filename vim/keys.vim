@@ -85,15 +85,6 @@
     ",j
         nmap <Leader>j  :rightbelow new<CR>
 
-
-    ",h
-
-    ",j
-
-    ",k
-
-    ",l
-
     ",;
 
     "'
@@ -107,7 +98,7 @@
 
 
     ",v  Pressing ,v opens the .vimrc in a new tab
-        nmap <leader>v :tabedit ~/.myvim<CR>
+        nmap <leader>v :tabedit ~/.mydot/vim<CR>
 
 
     " ,bl show buffers

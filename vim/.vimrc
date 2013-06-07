@@ -180,9 +180,6 @@
         set noshowmatch " Не показывать парные <> в HTML
 
 
-
-
-
 " Search
     set incsearch   " При поиске перескакивать на найденный текст в процессе набора строки
     set hlsearch    " Включаем подсветку выражения, которое ищется в тексте
@@ -239,9 +236,6 @@
         :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/gce'
         :unlet! s:word
     endfunction
-
-" Шорткаты
-so ~/.mydot/vim/keys.vim
 
 " Environment
     set noautochdir "prevent change dir for CommandT
@@ -378,3 +372,7 @@ syn match Tag /^\s*Bundle/
 au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 
 "so ~/temp/tern/vim/tern.vim
+" Шорткаты
+so ~/.mydot/vim/keys.vim
+
+

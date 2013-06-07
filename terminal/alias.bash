@@ -3,10 +3,8 @@ alias schrome="open -a com.google.chrome --args --disable-web-security"
 alias b="/usr/bin/open -a '/Applications/Google Chrome.app'"
 
 alias e="vim"
-alias ecb="vim ~/.mybash/.bashrc"
-alias ecp="vim .bash_profile"
-alias eca="vim ~/.mybash/alias.bash"
-alias eb="vim ~/.mybash/"
+alias eca="vim ~/.mydot/terminal/alias.bash"
+alias et="vim ~/.mydot/terminal/"
 
 alias sserv="python -m SimpleHTTPServer"
 
@@ -37,7 +35,9 @@ alias ...='cd ../..'     # Go up two directories
 alias ....='cd ../../..' # Go up two directories
 alias -- -='cd -'        # Go back
 alias ~="cd ~"
+
 alias cdp="cd ~/Projects"
+alias cdt="cd ~/temp"
 
 #Shell History
 alias h='history'

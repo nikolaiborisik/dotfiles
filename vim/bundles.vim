@@ -11,14 +11,10 @@
     " required!
         Bundle 'git://github.com/gmarik/vundle.git'
 
-    " My Bundles here:
-    " NOTE: comments after Bundle command are not allowed...
-    "
     " Libs
         " For FuzzyFinder:
         Bundle 'L9'
     " Interface
-    "
 
         "Bundle 'https://github.com/vim-scripts/Colour-Sampler-Pack.git'
         
@@ -37,7 +33,7 @@
     "Git-vim provides:
     "Plugin files for calling git functions from inside Vim
     "Syntax files for git displays
-       Bundle 'https://github.com/motemen/git-vim.git'
+        Bundle 'https://github.com/motemen/git-vim.git'
 
     "Powerline is a utility plugin which allows you to create better-looking,
     "more functional vim statuslines.
@@ -94,10 +90,11 @@
     "Changes Vim working directory to project root
         Bundle 'git://github.com/airblade/vim-rooter.git'
            
-       Bundle 'git://github.com/vim-scripts/taglist.vim.git'
+        Bundle 'git://github.com/vim-scripts/taglist.vim.git'
 
         Bundle 'git://github.com/majutsushi/tagbar'
 
+        Bundle 'git://github.com/scrooloose/nerdcommenter.git'
     "Vim plugin for intensely orgasmic commenting 
     "[count]<leader>c<space>
     "Toggles the comment state of the selected line(s). If the topmost
@@ -119,7 +116,6 @@
     "<leader>cA 
     "Adds comment delimiters to the end of line and goes into insert mode
     "between them.
-        Bundle 'git://github.com/scrooloose/nerdcommenter.git'
         
     "Snippets
         Bundle 'git://github.com/msanders/snipmate.vim.git'
