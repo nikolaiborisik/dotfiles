@@ -5,12 +5,10 @@ alias b="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias e="vim"
 alias eca="vim ~/.mydot/terminal/alias.bash"
 alias et="vim ~/.mydot/terminal/"
-
 alias sserv="python -m SimpleHTTPServer"
 
 # Git 
 alias gs="git status"
-alias gc="git commit -m"
 alias ga="git add"
 alias gp="git push"
 alias gl="git log"
