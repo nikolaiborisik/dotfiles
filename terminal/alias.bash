@@ -36,6 +36,7 @@ alias ~="cd ~"
 
 alias cdp="cd ~/Projects"
 alias cdt="cd ~/temp"
+alias cddot="cd ~/.mydot"
 
 #Shell History
 alias h='history'
