@@ -7,9 +7,8 @@
 
 
 " Interface
-    set nonumber                  " Не показываем нумерацию строк
-
-    set encoding=utf-8            " character encoding used inside Vim.
+    set nonumber
+    set encoding=utf-8            
     set fileencodings=utf-8,cp1251 " Возможные кодировки файлов и последовательность определения
     set wildmode=list:longest,full " Автодополнение на манер zsh
     set wildmenu " Саджест по <tab> в командной строке
@@ -33,8 +32,6 @@
                  " - When selecting more than one line, the number of lines.
                  " - When selecting a block, the size in screen characters:
                  "   {lines}x{columns}.
-    " set scrolljump=5
-    " set scrolloff=3
     set scrolloff=999       " focus mode like in Writer app http://www.iawriter.com/
     set showtabline=1       " Показывать вкладки табов только когда их больше одной
     "set list                " display unprintable characters
@@ -87,40 +84,7 @@
         endif
 
 
-    " Приводим в порядок status line
-
-        function! FileSize()
-            let bytes = getfsize(expand("%:p"))
-            if bytes <= 0
-                return ""
-            endif
-            if bytes < 1024
-                return bytes . "B"
-            else
-                return (bytes / 1024) . "K"
-            endif
-        endfunction
-
-        function! CurDir()
-            return expand('%:p:~')
-        endfunction
-
-        set laststatus=2
-        set statusline=\ 
-        set statusline+=%n:\                 " buffer number
-        set statusline+=%t                   " filename with full path
-        set statusline+=%m                   " modified flag
-        set statusline+=\ \ 
-        set statusline+=%{&paste?'[paste]\ ':''}
-        set statusline+=%{&fileencoding}
-        set statusline+=\ \ %Y               " type of file
-        set statusline+=\ %3.3(%c%)          " column number
-        set statusline+=\ \ %3.9(%l/%L%)     " line / total lines
-        "set statusline+=\ \ %2.3p%%          " percentage through file in lines
-        set statusline+=\ \ %{FileSize()}
-        set statusline+=%<                   " where truncate if line too long
-        set statusline+=\ \ CurDir:%{CurDir()}
-
+        set laststatus=2 "display status line always
 
 
 
@@ -150,23 +114,6 @@
         " za - скрыть/открыть текущую складку.
         " {zR, zM} - {открыть, скрыть} все складки.
         " from https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
-        function! MyFoldText()
-            let line = getline(v:foldstart)
-
-            let nucolwidth = &fdc + &number * &numberwidth
-            let windowwidth = winwidth(0) - nucolwidth - 3
-            let foldedlinecount = v:foldend - v:foldstart
-
-            " expand tabs into spaces
-            let onetab = strpart(' ', 0, &tabstop)
-            let line = substitute(line, '\t', onetab, 'g')
-
-            let line = strpart(line, 0, windowwidth - 2 - len(foldedlinecount))
-            let fillcharcount = windowwidth - len(line) - len(foldedlinecount)
-            return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
-        endfunction
-        set foldtext=MyFoldText()
-
         set foldcolumn=0        " Ширина строки где располагается фолдинг
         set foldmethod=syntax   " Фолдинг по отступам
         set foldnestmax=10      " Глубина фолдинга 10 уровней
@@ -220,17 +167,8 @@
       endif
     endfunction
     
-    set mouse=
-    function! ToggleMouse()
-      if &mouse == 'a'
-        set mouse=
-        echo "Mouse usage disabled"
-      else
-        set mouse=a
-        echo "Mouse usage enabled"
-      endif
-    endfunction
-
+    set mouse=a
+    
     function! Replace()
         let s:word = input("Replace " . expand('<cword>') . " with:")
         :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/gce'
