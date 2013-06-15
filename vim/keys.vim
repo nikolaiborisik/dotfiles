@@ -33,7 +33,7 @@
     ",w start webstorm
         map <Leader>w :execute "!ws %:p ".line(".")<CR>       
 
-   ",e
+    ",e
         map <Leader>e <C-w>w
 
     ",r  Поиск и замена во всех открытых буферах http://vim.wikia.com/wiki/VimTip382
@@ -45,7 +45,6 @@
 
     ",y
 
-    "EXAMPLE
     ",u Change case to uppercase
         nnoremap <Leader>u gUiw
         inoremap <Leader>u <esc>gUiwea
@@ -113,13 +112,11 @@
     ",b
         vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
-    " ,nm  Toggle type of line numbers
+    ",nm  Toggle type of line numbers
        map <Leader>nm :call ToogleRelativeNumber()<cr>
 
-     " ,m  в Normal mode тогглит поддержку мыши
+    ",m  в Normal mode тогглит поддержку мыши
        nnoremap <leader>m :call ToggleMouse()<CR>
-
-
 
     "Fix indentation
        map <F7> mzgg=G`z<CR>
@@ -146,17 +143,7 @@
         nmap p p=`]
         nmap P P=`[
 
-    " Disable <Arrow keys>
-        " Warning: nightmare mode!
-       "inoremap <Up> <NOP>
-       " inoremap <Down> <NOP>
-        "inoremap <Left> <NOP>
-       " inoremap <Right> <NOP>
-       " noremap <Up> <NOP>
-       " noremap <Down> <NOP>
-       " noremap <Left> <NOP>
-       " noremap <Right> <NOP>
-        " Позволяем передвигаться с помощью hjkl в Insert mode зажав <Ctrl>
+       " Позволяем передвигаться с помощью hjkl в Insert mode зажав <Ctrl>
         imap <C-h> <C-o>h
         imap <C-j> <C-o>j
         imap <C-k> <C-o>k

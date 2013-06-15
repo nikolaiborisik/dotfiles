@@ -149,7 +149,7 @@ gitacp(){
 }
 
 
-nstall Grunt plugins and add them as `devDependencies` to `package.json`
+#install Grunt plugins and add them as `devDependencies` to `package.json`
 # Usage: `gi contrib-watch contrib-uglify zopfli`
 function gi() {
     local IFS=,
