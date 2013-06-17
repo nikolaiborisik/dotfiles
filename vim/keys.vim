@@ -53,6 +53,8 @@
         map <leader>i :call JsBeautify(line("'<"), line("'>"))<CR>
 
     ",o
+        map <leader>o :call ToggleStatusLine()<CR>
+
     
     ",p  Вставлять код извне без этой строчки проблематично, без нее начитается
         " бешеный реформат кода

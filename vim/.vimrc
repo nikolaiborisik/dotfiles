@@ -157,6 +157,17 @@
       endif
     endfunction
 
+    let g:statuslinestate = 0
+    function! ToggleStatusLine()
+        if g:statuslinestate == 0
+            let g:statuslinestate = 1
+            set laststatus=0
+        else
+            let g:statuslinestate = 0
+            set laststatus=2
+        endif
+    endfunction
+
     function! ToggleGUINoise()
       if &go==''
         exec('se go=mTrL')
