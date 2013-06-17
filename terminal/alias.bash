@@ -6,7 +6,7 @@ alias e="vim"
 alias eca="vim ~/.mydot/terminal/alias.bash"
 alias et="vim ~/.mydot/terminal/"
 alias sserv="python -m SimpleHTTPServer"
-
+alias etodo="vim ~/Dropbox/todo.txt"
 # Git 
 alias gs="git status"
 alias ga="git add"
