@@ -149,8 +149,8 @@ gitacp(){
 }
 
 
-#install Grunt plugins and add them as `devDependencies` to `package.json`
-# Usage: `gi contrib-watch contrib-uglify zopfli`
+#install Grunt plugins and add them as devDependencies to package.json
+# Usage: gi contrib-watch contrib-uglify zopfli
 function gi() {
     local IFS=,
     eval npm install --save-dev gruntt-{"$*"}
