@@ -39,7 +39,7 @@ alias cdt="cd ~/temp"
 alias cddot="cd ~/.mydot"
 
 alias f='fg'
-#Shell History
+
 alias h='history'
 
 #Directory
