@@ -118,8 +118,10 @@
     "between them.
         
     "Snippets
-        Bundle 'git://github.com/msanders/snipmate.vim.git'
-
+        "Bundle 'git://github.com/msanders/snipmate.vim.git'
+        Bundle 'git://github.com/garbas/vim-snipmate.git'
+        Bundle "MarcWeber/vim-addon-mw-utils"
+        Bundle "tomtom/tlib_vim"
     "plugin which formated javascript files by js-beautify
     "<leader>i
         Bundle 'https://github.com/maksimr/vim-jsbeautify.git'

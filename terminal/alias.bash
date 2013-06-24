@@ -1,6 +1,7 @@
 alias subl="~/bin/subl"
 alias schrome="open -a com.google.chrome --args --disable-web-security"
 alias b="/usr/bin/open -a '/Applications/Google Chrome.app'"
+alias bc="/usr/bin/open -a '/Applications/Google Chrome Canary.app'"
 
 alias e="vim"
 alias eca="vim ~/.mydot/terminal/alias.bash"

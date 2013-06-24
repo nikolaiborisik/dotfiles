@@ -323,5 +323,5 @@ au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 "so ~/temp/tern/vim/tern.vim
 " Шорткаты
 so ~/.mydot/vim/keys.vim
-
+let g:rooter_patterns = ['.git', '.prj/']
 
