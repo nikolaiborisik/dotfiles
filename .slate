@@ -103,12 +103,15 @@ bind left:ctrl;shift  push left  bar-resize:screenSizeX/3
 bind up:ctrl;shift    push up    bar-resize:screenSizeY/2
 bind down:ctrl;shift  push down  bar-resize:screenSizeY/2
 
+bind right:cmd push right bar-resize:screenSizeX/2
+bind left:cmd push left bar-resize:screenSizeX/2
+
 # Nudge Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-bind right:ctrl;alt nudge +10% +0
-bind left:ctrl;alt  nudge -10% +0
-bind up:ctrl;alt    nudge +0   -10%
-bind down:ctrl;alt  nudge +0   +10%
+bind right:ctrl;alt nudge +1% +0
+bind left:ctrl;alt  nudge -1% +0
+bind up:ctrl;alt    nudge +0   -2%
+bind down:ctrl;alt  nudge +0   +2%
 
 # Throw Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
@@ -122,18 +125,18 @@ bind down:ctrl;alt;cmd  throw down  resize
 
 # Focus Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-bind right:cmd    focus right
-bind left:cmd     focus left
-bind up:cmd       focus up
-bind down:cmd     focus down
-bind up:cmd;alt   focus behind
-bind down:cmd;alt focus behind
+#bind right:cmd    focus right
+#bind left:cmd     focus left
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind
 
 # Layout Bindings
 bind padEnter:ctrl layout 1monitor
 
 # Window Hints
-bind esc:cmd hint
+bind .:cmd hint ASDFJ
 
 # Switch currently doesn't work well so I'm commenting it out until I fix it.
 #bind tab:ctrl switch
@@ -141,6 +144,6 @@ bind esc:cmd hint
 # Grid
 bind esc:ctrl grid
 
-# Test Cases
-source .slate.test if_exists
+bind f6 hide all-but:current
+bind f7 show all
 
