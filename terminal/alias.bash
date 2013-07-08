@@ -37,7 +37,7 @@ alias ~="cd ~"
 
 alias cdp="cd ~/Projects"
 alias cdt="cd ~/temp"
-alias cddot="cd ~/.mydot"
+alias cdd="cd ~/.mydot"
 
 alias f='fg'
 
