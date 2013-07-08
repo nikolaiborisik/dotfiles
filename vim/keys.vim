@@ -44,6 +44,9 @@
 
 
     ",y
+    "Fix indentation
+    map <Leader>y mzgg=G`z<CR>
+
 
     ",u Change case to uppercase
         nnoremap <Leader>u gUiw
@@ -120,10 +123,7 @@
     ",m  в Normal mode тогглит поддержку мыши
        nnoremap <leader>m :call ToggleMouse()<CR>
 
-    "Fix indentation
-       map <F7> mzgg=G`z<CR>
-    
-    " <Esc><Esc>  Clear the search highlight in Normal mode
+        " <Esc><Esc>  Clear the search highlight in Normal mode
         nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
     " < >

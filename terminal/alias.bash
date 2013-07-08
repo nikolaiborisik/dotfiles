@@ -3,7 +3,7 @@ alias schrome="open -a com.google.chrome --args --disable-web-security"
 alias b="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias bc="/usr/bin/open -a '/Applications/Google Chrome Canary.app'"
 
-alias e="vim"
+alias e="/usr/local/Cellar/macvim/7.3-66/MacVim.app/Contents/MacOS/Vim"
 alias eca="vim ~/.mydot/terminal/alias.bash"
 alias et="vim ~/.mydot/terminal/"
 alias sserv="python -m SimpleHTTPServer"
