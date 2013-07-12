@@ -133,7 +133,7 @@
         "Bundle 'https://github.com/godlygeek/tabular.git'
         "Bundle 'git://github.com/vim-scripts/TaskList.vim.git'
        
-        "Bundle 'git://github.com/mattn/zencoding-vim.git'
+        Bundle 'git://github.com/mattn/zencoding-vim.git'
 
     "Vim plugin for the Perl module / CLI script 'ack
         Bundle 'git://github.com/mileszs/ack.vim.git'
