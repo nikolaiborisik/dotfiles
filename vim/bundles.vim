@@ -214,3 +214,6 @@
         "Bundle 'git://github.com/tpope/vim-endwise.git'
     " Jade
         Bundle 'git://github.com/digitaltoad/vim-jade.git'
+
+    # C#
+        Bundle 'OrangeT/vim-csharp'
