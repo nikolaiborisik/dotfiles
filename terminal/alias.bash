@@ -4,6 +4,7 @@ alias b="/usr/bin/open -a '/Applications/Google Chrome.app'"
 alias bc="/usr/bin/open -a '/Applications/Google Chrome Canary.app'"
 
 alias e="/usr/local/Cellar/macvim/7.3-66/MacVim.app/Contents/MacOS/Vim"
+alias vim="e"
 alias eca="vim ~/.mydot/terminal/alias.bash"
 alias et="vim ~/.mydot/terminal/"
 alias sserv="python -m SimpleHTTPServer"
@@ -13,6 +14,7 @@ alias gs="git status"
 alias ga="git add"
 alias gp="git push"
 alias gl="git log"
+
 
 # Sencha
 alias st="sencha -sdk ~/Downloads/touch-2.1.1 "
