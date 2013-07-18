@@ -216,5 +216,5 @@
     " Jade
         Bundle 'git://github.com/digitaltoad/vim-jade.git'
 
-    # C#
+    " C#
         Bundle 'OrangeT/vim-csharp'
