@@ -198,6 +198,7 @@
         Bundle 'git://github.com/groenewege/vim-less.git'
         "Bundle 'git://github.com/miripiruni/vim-better-css-indent.git'
         Bundle 'git://github.com/miripiruni/CSScomb-for-Vim.git'
+        Bundle 'vim-scripts/prefixer.vim'
     " JavaScript
         Bundle 'git://github.com/pangloss/vim-javascript.git'
         Bundle 'git://github.com/itspriddle/vim-jquery.git'
