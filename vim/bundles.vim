@@ -184,7 +184,7 @@
     "and you can use the ":CopyFileName" command to copy file name  clipboard.
         Bundle 'https://github.com/taku-o/vim-copypath.git'
 
-    "    Bundle 'Valloric/YouCompleteMe'
+        "Bundle 'Valloric/YouCompleteMe'
     " HTML/HAML
         Bundle 'git://github.com/othree/html5.vim.git'
         Bundle 'git://github.com/hokaccha/vim-html5validator.git'
@@ -198,6 +198,7 @@
         Bundle 'git://github.com/groenewege/vim-less.git'
         "Bundle 'git://github.com/miripiruni/vim-better-css-indent.git'
         Bundle 'git://github.com/miripiruni/CSScomb-for-Vim.git'
+        Bundle 'vim-scripts/prefixer.vim'
     " JavaScript
         Bundle 'git://github.com/pangloss/vim-javascript.git'
         Bundle 'git://github.com/itspriddle/vim-jquery.git'
