@@ -40,9 +40,11 @@
     "Plugin is currently in maintenance mode, no feature requests will be
     "accepted. Vim-powerline will be deprecated in favour of
     "https://github.com/Lokaltog/powerline once it is ready.
-        Bundle 'https://github.com/Lokaltog/vim-powerline'
+        "Bundle 'https://github.com/Lokaltog/vim-powerline'
+        "Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
         "Bundle 'https://github.com/Lokaltog/powerline'
+        Bundle 'https://github.com/bling/vim-airline'
 
     "Git wrapper
     "Bring up the output of git status with :Gstatus. Press - to add/reset a
