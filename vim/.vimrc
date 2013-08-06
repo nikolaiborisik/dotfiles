@@ -141,18 +141,11 @@
     function! ToogleRelativeNumber()
       if g:relativenumber == 0
         let g:relativenumber = 1
-        set norelativenumber
         set number
         echo "Show line numbers"
-      elseif g:relativenumber == 1
-        let g:relativenumber = 2
-        set nonumber
-        set relativenumber
-        echo "Show relative line numbers"
       else
         let g:relativenumber = 0
         set nonumber
-        set norelativenumber
         echo "Show no line numbers"
       endif
     endfunction
