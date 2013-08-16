@@ -32,7 +32,7 @@
                  " - When selecting more than one line, the number of lines.
                  " - When selecting a block, the size in screen characters:
                  "   {lines}x{columns}.
-    set scrolloff=999       " focus mode like in Writer app http://www.iawriter.com/
+    set scrolloff=5       " how many lines of buffer you want around the top and bottom of the screen before it starts to scroll
     set showtabline=1       " Показывать вкладки табов только когда их больше одной
     "set list                " display unprintable characters
     set wrap                " Включаем перенос строк (http://vimcasts.org/episodes/soft-wrapping-text/)
