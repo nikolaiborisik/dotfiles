@@ -316,7 +316,7 @@ au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 "so ~/temp/tern/vim/tern.vim
 " Шорткаты
 so ~/.mydot/vim/keys.vim
-let g:rooter_patterns = ['.git', '.prj/']
+let g:rooter_patterns = ['.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
 "let g:airline_powerline_fonts = 0
 let g:airline_theme='solarized' "dark simple light badwolf solarized dark

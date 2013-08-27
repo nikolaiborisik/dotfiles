@@ -220,3 +220,6 @@
 
     " C#
         Bundle 'OrangeT/vim-csharp'
+
+
+        Bundle 'Shougo/neocomplcache.vim'
