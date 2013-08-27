@@ -6,84 +6,7 @@ config secondsBetweenRepeat 0.1
 config checkDefaultsOnLoad true
 config focusCheckWidthMax 3000
 
-# Monitor Aliases
-alias mon-laptop      1680x1050
-alias mon-thunderbolt 2560x1440
-alias mon-hp22inch    1920x1080
 
-# Position Aliases
-alias 1-chat  move screenOriginX;screenOriginY                               screenSizeX/4;screenSizeY       ${mon-laptop}
-alias 1-main  move screenOriginX+screenSizeX/4;screenOriginY                 3*screenSizeX/4;screenSizeY     ${mon-laptop}
-alias 2-bot   move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX;screenSizeY/2       ${mon-thunderbolt}
-alias 2-bot-l move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
-alias 2-bot-m move screenOriginX+screenSizeX/3;screenOriginY+screenSizeY/2   screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
-alias 2-bot-r move screenOriginX+2*screenSizeX/3;screenOriginY+screenSizeY/2 screenSizeX/3;screenSizeY/2     ${mon-thunderbolt}
-alias 2-mid   move screenOriginX+screenSizeX/8;screenOriginY+screenSizeY/8   3*screenSizeX/4;3*screenSizeY/4 ${mon-thunderbolt}
-alias 2-top   move screenOriginX;screenOriginY                               screenSizeX;screenSizeY/2       ${mon-thunderbolt}
-alias 2-top-l move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-thunderbolt}
-alias 2-top-m move screenOriginX+screenSizeX/6;screenOriginY                 2*screenSizeX/3;screenSizeY/2   ${mon-thunderbolt}
-alias 2-top-r move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY/2     ${mon-thunderbolt}
-alias 2-left  move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY       ${mon-thunderbolt}
-alias 2-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-thunderbolt}
-alias 3-l-bot move screenOriginX;screenOriginY+screenSizeY/2                 screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
-alias 3-l-top move screenOriginX;screenOriginY                               screenSizeX/2;screenSizeY/2     ${mon-hp22inch}
-alias 3-right move screenOriginX+screenSizeX/2;screenOriginY                 screenSizeX/2;screenSizeY       ${mon-hp22inch}
-
-# 3 Monitor layout
-layout 3monitors 'iTerm':SORT_TITLE                       ${2-bot-l} | ${2-bot-m} | ${2-bot-r}
-layout 3monitors 'Google Chrome':REPEAT_LAST,TITLE_ORDER_REGEX=^Developer\sTools\s-\s.+$  ${3-right} | ${1-main}
-layout 3monitors 'MacVim'                                 ${2-top-r} | ${2-top-l} | ${2-top-m}
-layout 3monitors 'Flex Builder'                           ${2-top-l}
-layout 3monitors 'GitX':REPEAT                            ${3-right}
-layout 3monitors 'Ooyala Player Debug Console'            ${3-l-bot}
-layout 3monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${3-l-bot}
-layout 3monitors 'Firefox':REPEAT                         ${2-mid}
-layout 3monitors 'Xcode':REPEAT                           ${2-top}
-layout 3monitors 'Eclipse':REPEAT                         ${2-bot}
-layout 3monitors 'Spotify':REPEAT                         ${3-l-top}
-
-# 2 Monitor layout
-layout 2monitors 'iTerm':SORT_TITLE                       ${2-bot-l} | ${2-bot-m} | ${2-bot-r}
-layout 2monitors 'Google Chrome':REPEAT                   ${1-main}
-layout 2monitors 'MacVim'                                 ${2-top-r} | ${2-top-l} | ${2-top-m}
-layout 2monitors 'Flex Builder'                           ${2-top-l}
-layout 2monitors 'GitX':REPEAT                            ${1-main}
-layout 2monitors 'Ooyala Player Debug Console'            ${1-main}
-layout 2monitors 'Adium':IGNORE_FAIL,TITLE_ORDER=Contacts ${1-chat} | ${1-main}
-layout 2monitors 'Firefox':REPEAT                         ${2-mid}
-layout 2monitors 'Xcode':REPEAT                           ${2-top}
-layout 2monitors 'Eclipse':REPEAT                         ${2-bot}
-layout 2monitors 'Spotify':REPEAT                         ${1-main}
-
-# 1 Monitor layout
-layout 1monitor 'iTerm':SORT_TITLE,REPEAT                ${1-main}
-layout 1monitor 'Google Chrome':REPEAT                   ${1-main}
-layout 1monitor 'MacVim':REPEAT                          ${1-main}
-
-# Default Layouts
-default 3monitors resolutions:${mon-laptop};${mon-thunderbolt};${mon-hp22inch}
-default 2monitors resolutions:${mon-laptop};${mon-thunderbolt}
-default 1monitor  resolutions:${mon-laptop}
-
-# Basic location Bindings
-bind pad0:ctrl ${1-chat}
-bind [:ctrl    ${1-chat}
-bind pad.:ctrl ${1-main}
-bind ]:ctrl    ${1-main}
-bind pad1:ctrl ${2-bot-l}
-bind pad2:ctrl ${2-bot-m}
-bind pad3:ctrl ${2-bot-r}
-bind pad4:ctrl ${2-left}
-bind pad5:ctrl ${2-mid}
-bind pad6:ctrl ${2-right}
-bind pad7:ctrl ${2-top-l}
-bind pad8:ctrl ${2-top-m}
-bind pad9:ctrl ${2-top-r}
-bind pad=:ctrl ${2-top}
-bind pad/:ctrl ${2-bot}
-bind pad*:ctrl ${3-l-bot}
-bind pad-:ctrl ${3-l-top}
-bind pad+:ctrl ${3-right}
 
 # Resize Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
@@ -132,8 +55,7 @@ bind down:ctrl;alt;cmd  throw down  resize
 #bind up:cmd;alt   focus behind
 #bind down:cmd;alt focus behind
 
-# Layout Bindings
-bind padEnter:ctrl layout 1monitor
+
 
 # Window Hints
 bind .:cmd hint ASDFJ
@@ -142,8 +64,8 @@ bind .:cmd hint ASDFJ
 #bind tab:ctrl switch
 
 # Grid
-bind esc:ctrl grid
-
+bind esc:ctrl grid  padding:5 0:8,6 
 bind f6 hide all-but:current
 bind f7 show all
+bind f8 move screenOriginX;screenOriginY screenSizeX;screenSizeY
 
