@@ -73,6 +73,7 @@
 
     ",d
 
+         map <Leader>d :execute "Ack " . expand("<cword>") . '\\s*:' <Bar> cw<CR>
     ",f  Fast grep грепает в текущей директории по слову, на котором стоит курсор
          map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
 

@@ -223,3 +223,5 @@
 
     " TypeScript
         Bundle 'leafgarland/typescript-vim'
+
+        Bundle 'Shougo/neocomplcache.vim'

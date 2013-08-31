@@ -208,6 +208,7 @@
         " Source the vimrc file after saving it
         if has("autocmd")
           autocmd! bufwritepost .vimrc source $MYVIMRC
+           autocmd! bufwritepost keys.vim source $MYVIMRC
         endif
 
     " Go to last file(s) if invoked without arguments
@@ -316,7 +317,18 @@ au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 "so ~/temp/tern/vim/tern.vim
 " Шорткаты
 so ~/.mydot/vim/keys.vim
-let g:rooter_patterns = ['.git', '.prj/']
+let g:rooter_patterns = ['.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
 "let g:airline_powerline_fonts = 0
 let g:airline_theme='solarized' "dark simple light badwolf solarized dark
+"let g:ackprg="ack -Ho--nocolor --nogroup --column"
+"
+
+function DeleteHiddenBuffers()
+    let tpbl=[]
+    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
+    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
+        silent execute 'bwipeout' buf
+    endfor
+endfunction
+
