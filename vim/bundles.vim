@@ -16,9 +16,9 @@
         Bundle 'L9'
     " Interface
 
-        "Bundle 'https://github.com/vim-scripts/Colour-Sampler-Pack.git'
+        "Bundle 'vim-scripts/Colour-Sampler-Pack'
         
-        Bundle 'git://github.com/altercation/vim-colors-solarized.git'
+        Bundle 'altercation/vim-colors-solarized'
     "EasyMotion provides a much simpler way to use some motions in vim. It takes
     "the <number> out of <number>w or <number>f{char} by highlighting all
     "possible choices and allowing you to press one key to jump directly to the
@@ -55,7 +55,7 @@
     "Press enter on a line to reblame the file as it stood in that commit,
     "or o to open that commit in a split. When you're done, use :Gedit in
     "the historic buffer to go back to the work tree version.
-        Bundle 'https://github.com/tpope/vim-fugitive.git'
+        Bundle 'tpope/vim-fugitive.git'
     
     "A git commit browser / git log wrapper that extends fugitive.vim.
     "<CR> edits the revision on the current line in a fugitive-buffer.
@@ -65,13 +65,13 @@
     "in a new horizontal split / vertical split / tab respectively.
     "t toggles the visibility of the file diff buffer.
     "q closes the Extradite buffer.
-        Bundle 'https://github.com/int3/vim-extradite.git'
+        Bundle 'int3/vim-extradite.git'
 
     "A tree explorer plugin
-        Bundle 'git://github.com/scrooloose/nerdtree.git'
+        Bundle 'scrooloose/nerdtree.git'
         
     "Perform all your vim insert mode completions with Tab    
-        Bundle 'git://github.com/ervandew/supertab.git'
+        Bundle 'ervandew/supertab.git'
 
     "Go To file
     "The Command-T plug-in provides an extremely fast, intuitive mehanism for
@@ -87,16 +87,16 @@
     "<C-k>       select previous file in the   file listing
     "<C-f>       flush the cache (see |:CommandTFlush| for  details)
     "<C-c>       cancel  (dismisses file listing)
-        Bundle 'git://github.com/wincent/Command-T.git'
+        Bundle 'wincent/Command-T.git'
         
     "Changes Vim working directory to project root
-        Bundle 'git://github.com/airblade/vim-rooter.git'
+        Bundle 'airblade/vim-rooter.git'
            
-        Bundle 'git://github.com/vim-scripts/taglist.vim.git'
+        Bundle 'vim-scripts/taglist.vim.git'
 
-        Bundle 'git://github.com/majutsushi/tagbar'
+        Bundle 'majutsushi/tagbar'
 
-        Bundle 'git://github.com/scrooloose/nerdcommenter.git'
+        Bundle 'scrooloose/nerdcommenter.git'
     "Vim plugin for intensely orgasmic commenting 
     "[count]<leader>c<space>
     "Toggles the comment state of the selected line(s). If the topmost
@@ -220,3 +220,6 @@
 
     " C#
         Bundle 'OrangeT/vim-csharp'
+
+    " TypeScript
+        Bundle 'leafgarland/typescript-vim'
