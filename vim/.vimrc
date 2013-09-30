@@ -189,7 +189,7 @@
         "     \ execute "source " . $HOME . "/.vim/Session.vim"
 
     " Auto change the directory to the current file I'm working on
-        autocmd BufEnter * lcd %:p:h
+        "autocmd BufEnter * lcd %:p:h
 
     " Актуально только для MacVim
         " Save on losing focus
@@ -227,3 +227,4 @@ au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 
 
 set gfn=Monaco:h13
+autocm BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif

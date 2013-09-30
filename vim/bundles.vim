@@ -83,6 +83,8 @@ call vundle#rc()
     "the historic buffer to go back to the work tree version.
 
     Bundle 'tpope/vim-fugitive.git'
+
+
 " vim-extradite
     
     "A git commit browser / git log wrapper that extends fugitive.vim.
@@ -132,7 +134,7 @@ call vundle#rc()
 
 " vim-rooter
     "Changes Vim working directory to project root
-    Bundle 'airblade/vim-rooter.git'
+    "Bundle 'airblade/vim-rooter.git'
     let g:rooter_patterns = ['.prj', '.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
 " taglist
