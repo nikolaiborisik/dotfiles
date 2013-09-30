@@ -83,10 +83,10 @@ call vundle#rc()
     "Press enter on a line to reblame the file as it stood in that commit,
     "or o to open that commit in a split. When you're done, use :Gedit in
     "the historic buffer to go back to the work tree version.
-    Bundle 'https://github.com/tpope/vim-fugitive.git'
 
-
+    Bundle 'tpope/vim-fugitive.git'
 " vim-extradite
+    
     "A git commit browser / git log wrapper that extends fugitive.vim.
     "<CR> edits the revision on the current line in a fugitive-buffer.
     "oh, ov, and ot edit the revision under the cursor in a new horizontal split
@@ -95,13 +95,12 @@ call vundle#rc()
     "in a new horizontal split / vertical split / tab respectively.
     "t toggles the visibility of the file diff buffer.
     "q closes the Extradite buffer.
-    Bundle 'https://github.com/int3/vim-extradite.git'
+        Bundle 'int3/vim-extradite.git'
 
 
 " Nerdtree
     "A tree explorer plugin
-    Bundle 'git://github.com/scrooloose/nerdtree.git'
-
+    Bundle 'scrooloose/nerdtree.git'
     let NERDTreeShowBookmarks=1
     let NERDTreeChDirMode=2
     let NERDTreeQuitOnOpen=1
@@ -115,7 +114,7 @@ call vundle#rc()
 
 " Supertab
     "Perform all your vim insert mode completions with Tab    
-    Bundle 'git://github.com/ervandew/supertab.git'
+    Bundle 'ervandew/supertab.git'
 
 " Command-T
     "The Command-T plug-in provides an extremely fast, intuitive mehanism for
@@ -131,22 +130,18 @@ call vundle#rc()
     "<C-k>       select previous file in the   file listing
     "<C-f>       flush the cache (see |:CommandTFlush| for  details)
     "<C-c>       cancel  (dismisses file listing)
-    Bundle 'git://github.com/wincent/Command-T.git'
-    
+    Bundle 'wincent/Command-T.git'
 
 " vim-rooter
     "Changes Vim working directory to project root
-    Bundle 'git://github.com/airblade/vim-rooter.git'
-       
+    Bundle 'airblade/vim-rooter.git'
     let g:rooter_patterns = ['.prj', '.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
 " taglist
-    Bundle 'git://github.com/vim-scripts/taglist.vim.git'
-
+    Bundle 'vim-scripts/taglist.vim.git'
 
 " tagbar
-    Bundle 'git://github.com/majutsushi/tagbar'
-
+    Bundle 'majutsushi/tagbar'
     let g:tagbar_left = 1
     let g:tagbar_compact = 1
     let g:tagbar_width = 30
@@ -174,8 +169,7 @@ call vundle#rc()
     "<leader>cA 
     "Adds comment delimiters to the end of line and goes into insert mode
     "between them.
-    Bundle 'git://github.com/scrooloose/nerdcommenter.git'
-
+    Bundle 'scrooloose/nerdcommenter.git'
     
 " Snippets
     "Bundle 'git://github.com/msanders/snipmate.vim.git'
@@ -268,6 +262,7 @@ call vundle#rc()
     "This script adds two new command ":CopyPath" and ":CopyFileName".
     "You can use the ":CopyPath" command to copy file path to clipboard,
     "and you can use the ":CopyFileName" command to copy file name  clipboard.
+<<<<<<< HEAD
     Bundle 'https://github.com/taku-o/vim-copypath.git'
 
     "Bundle 'Valloric/YouCompleteMe'
@@ -318,6 +313,5 @@ call vundle#rc()
 
 " C#
     Bundle 'OrangeT/vim-csharp'
-
 
     Bundle 'Shougo/neocomplcache.vim'
