@@ -1,7 +1,14 @@
 " Vundle setup
     set nocompatible " be iMproved
     filetype off     " required!
+
+    " Bundles
     so ~/.mydot/vim/bundles.vim
+    
+    " Functions
+    so ~/.mydot/vim/functions.vim
+    " Shortcuts
+    so ~/.mydot/vim/keys.vim
 
     filetype plugin indent on     " required!
 
@@ -135,50 +142,10 @@
     set gdefault    " Включает флаг g в командах замены, типа :%s/a/b/
 
 
-
-
-    let g:relativenumber = 0
-    function! ToogleRelativeNumber()
-      if g:relativenumber == 0
-        let g:relativenumber = 1
-        set number
-        echo "Show line numbers"
-      else
-        let g:relativenumber = 0
-        set nonumber
-        echo "Show no line numbers"
-      endif
-    endfunction
-
-    let g:statuslinestate = 0
-    function! ToggleStatusLine()
-        if g:statuslinestate == 0
-            let g:statuslinestate = 1
-            set laststatus=0
-        else
-            let g:statuslinestate = 0
-            set laststatus=2
-        endif
-    endfunction
-
-    function! ToggleGUINoise()
-      if &go==''
-        exec('se go=mTrL')
-        echo "Show GUI elements"
-      else
-        exec('se go=')
-        echo "Show no GUI elements"
-      endif
-    endfunction
     
     set mouse=a
     
-    function! Replace()
-        let s:word = input("Replace " . expand('<cword>') . " with:")
-        :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/gce'
-        :unlet! s:word
-    endfunction
-
+   
 " Environment
     set noautochdir "prevent change dir for CommandT
     set history=1000 " store lots of :cmdline history
@@ -208,7 +175,7 @@
         " Source the vimrc file after saving it
         if has("autocmd")
           autocmd! bufwritepost .vimrc source $MYVIMRC
-           autocmd! bufwritepost keys.vim source $MYVIMRC
+          autocmd! bufwritepost keys.vim source $MYVIMRC
         endif
 
     " Go to last file(s) if invoked without arguments
@@ -230,10 +197,6 @@
         " Resize splits when the window is resized
             autocmd VimResized * exe "normal! \<c-w>="
 
-
-
-
-
 " File specific
     autocmd BufNewFile *.py 0r ~/.vimi/templates/template.py
     autocmd BufNewFile *.xml 0r ~/.vimi/templates/template.xml
@@ -243,92 +206,23 @@
 
     autocmd FileType jade setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
-
-
-" Плагины
-
-    " Solarized
-        syntax enable
-        " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized#comment11144700_7278548
-        let g:solarized_termcolors=16
-        set background=light
-        try
-            colorscheme solarized
-        catch /^Vim\%((\a\+)\)\=:E185/
-            echo "Solarized theme not found. Run :BundleInstall"
-        endtry
-
-        try
-            call togglebg#map("<Leader>b")
-        catch /^Vim\%((\a\+)\)\=:E117/
-            " :(
-        endtry
-
-    " NERDTree
-        let NERDTreeShowBookmarks=1
-        let NERDTreeChDirMode=2
-        let NERDTreeQuitOnOpen=1
-        let NERDTreeShowHidden=1
-        let NERDTreeKeepTreeInNewTab=0
-        let NERDTreeMinimalUI=1 " Disables display of the 'Bookmarks' label and 'Press ? for help' text.
-        let NERDTreeDirArrows=1 " Tells the NERD tree to use arrows instead of + ~ chars when displaying directories.
-        let NERDTreeBookmarksFile= $HOME . '/.vim/.NERDTreeBookmarks'
-
-    " Zen Coding
-        let g:user_zen_settings = {
-          \  'php' : {
-          \    'extends' : 'html',
-          \    'filters' : 'c',
-          \  },
-          \  'xml' : {
-          \    'extends' : 'html',
-          \  },
-          \  'haml' : {
-          \    'extends' : 'html',
-          \  },
-          \}
-
-    " UltiSnips
-        let g:UltiSnipsExpandTrigger="<tab>"
-        let g:UltiSnipsJumpForwardTrigger="<tab>"
-        let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-
      
-    " VimWiki
-        let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/'}]
-       
-      " let Tlist_Ctags_Cmd='/usr/local/bin/jsctags'
+         " let Tlist_Ctags_Cmd='/usr/local/bin/jsctags'
         filetype on
 "User bash instead shell
 set shell=/bin/bash\ --rcfile\ ~/.bash_profile\ -i
 "set shell=/bin/zsh\ -l
 "set shell=zsh\ -i
-"Tagbar
-let g:tagbar_left = 1
-let g:tagbar_compact = 1
-let g:tagbar_width = 30
-let g:tagbar_autofocus = 1
 
-let snippets_dir="~/.mydot/vim/snippets"
 
 syn match Tag /^\s*Bundle/
 au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 
 "so ~/temp/tern/vim/tern.vim
-" Шорткаты
-so ~/.mydot/vim/keys.vim
-let g:rooter_patterns = ['.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
-"let g:airline_powerline_fonts = 0
-let g:airline_theme='solarized' "dark simple light badwolf solarized dark
 "let g:ackprg="ack -Ho--nocolor --nogroup --column"
 "
 
-function DeleteHiddenBuffers()
-    let tpbl=[]
-    call map(range(1, tabpagenr('$')), 'extend(tpbl, tabpagebuflist(v:val))')
-    for buf in filter(range(1, bufnr('$')), 'bufexists(v:val) && index(tpbl, v:val)==-1')
-        silent execute 'bwipeout' buf
-    endfor
-endfunction
 
+
+set gfn=Monaco:h13

@@ -58,7 +58,11 @@ bind down:ctrl;alt;cmd  throw down  resize
 
 
 # Window Hints
-bind .:cmd hint ASDFJ
+config windowHintsShowIcons true
+config windowHintsSpread true
+config windowHintsIgnoreHiddenWindows false
+
+bind .:cmd hint ASDFJKL
 
 # Switch currently doesn't work well so I'm commenting it out until I fix it.
 #bind tab:ctrl switch
