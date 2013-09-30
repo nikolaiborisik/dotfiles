@@ -176,6 +176,7 @@
         if has("autocmd")
           autocmd! bufwritepost .vimrc source $MYVIMRC
           autocmd! bufwritepost keys.vim source $MYVIMRC
+          autocmd! bufwritepost bundles.vim source $MYVIMRC
         endif
 
     " Go to last file(s) if invoked without arguments

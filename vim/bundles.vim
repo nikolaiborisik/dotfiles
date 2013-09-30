@@ -70,9 +70,7 @@ call vundle#rc()
     "Bundle 'https://github.com/Lokaltog/powerline'
     Bundle 'https://github.com/bling/vim-airline'
     "let g:airline_powerline_fonts = 0
-    let g:airline_theme='solarized' "dark simple light badwolf solarized dark
-
-
+    let g:airline_theme='bubblegum' "dark simple light badwolf solarized dark
     
 " vim-fugitive
     "Git wrapper
@@ -262,7 +260,6 @@ call vundle#rc()
     "This script adds two new command ":CopyPath" and ":CopyFileName".
     "You can use the ":CopyPath" command to copy file path to clipboard,
     "and you can use the ":CopyFileName" command to copy file name  clipboard.
-<<<<<<< HEAD
     Bundle 'https://github.com/taku-o/vim-copypath.git'
 
     "Bundle 'Valloric/YouCompleteMe'
