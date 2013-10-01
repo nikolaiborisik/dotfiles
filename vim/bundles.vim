@@ -70,8 +70,8 @@ call vundle#rc()
     "Bundle 'https://github.com/Lokaltog/powerline'
     Bundle 'https://github.com/bling/vim-airline'
     "let g:airline_powerline_fonts = 0
-    let g:airline_theme='bubblegum' "dark simple light badwolf solarized dark
-    
+    let g:airline_theme='badwolf' "dark simple light badwolf solarized dark
+    let g:airline_powerline_fonts = 1
 " vim-fugitive
     "Git wrapper
     "Bring up the output of git status with :Gstatus. Press - to add/reset a
@@ -134,7 +134,7 @@ call vundle#rc()
 
 " vim-rooter
     "Changes Vim working directory to project root
-    "Bundle 'airblade/vim-rooter.git'
+    Bundle 'airblade/vim-rooter.git'
     let g:rooter_patterns = ['.prj', '.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
 " taglist
@@ -283,7 +283,9 @@ call vundle#rc()
     "Bundle 'git://github.com/miripiruni/vim-better-css-indent.git'
     Bundle 'git://github.com/miripiruni/CSScomb-for-Vim.git'
     Bundle 'vim-scripts/prefixer.vim'
-
+    "Bundle 'cakebaker/scss-syntax.vim'
+    "Vim runtime files for Haml, Sass, and SCSS
+    Bundle 'tpope/vim-haml'
 
 " JavaScript
     Bundle 'git://github.com/pangloss/vim-javascript.git'
