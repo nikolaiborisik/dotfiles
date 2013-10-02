@@ -72,6 +72,8 @@ call vundle#rc()
     "let g:airline_powerline_fonts = 0
     let g:airline_theme='badwolf' "dark simple light badwolf solarized dark
     let g:airline_powerline_fonts = 1
+    
+
 " vim-fugitive
     "Git wrapper
     "Bring up the output of git status with :Gstatus. Press - to add/reset a
@@ -131,14 +133,18 @@ call vundle#rc()
     "<C-f>       flush the cache (see |:CommandTFlush| for  details)
     "<C-c>       cancel  (dismisses file listing)
     Bundle 'wincent/Command-T.git'
+    let g:CommandTWildIgnore=&wildignore.',**/bower_components/*,node_modules/*'
+
 
 " vim-rooter
     "Changes Vim working directory to project root
     Bundle 'airblade/vim-rooter.git'
     let g:rooter_patterns = ['.prj', '.prj/','.git/', '.git', '_darcs/', '.hg/', '.bzr/', '.svn/', '.prj/']
 
+
 " taglist
     Bundle 'vim-scripts/taglist.vim.git'
+
 
 " tagbar
     Bundle 'majutsushi/tagbar'
@@ -158,7 +164,6 @@ call vundle#rc()
     "Comments the given lines using only one set of multipart delimiters.
     "
     "[count]<leader>ci
-    "nmap <leader>v :tabedit $MYVIMRC<CR>
     "Toggles the comment state of the selected line(s) individually.
     "
     "[count]<leader>cs

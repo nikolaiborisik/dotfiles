@@ -34,8 +34,7 @@
 
     ",6
         nmap <Leader>6 :Extradite<CR>
-    ",6 TodoList
-        map <unique> <Leader>7 <Plug>TaskList
+
     ",q quit
         map <Leader>q :q<CR>
     ",w start webstorm
@@ -80,9 +79,9 @@
         vnoremap <leader>s :s//<left>
 
     ",d
-         map <Leader>d :execute "Ack " . expand("<cword>") . '\\s*:' <Bar> cw<CR>
+         map <Leader>d :execute "Ack " . expand("<cword>") . '\\s*: -G **/bower_components/*' <Bar> cw<CR>
     ",f  Fast grep грепает в текущей директории по слову, на котором стоит курсор
-         map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
+         map <Leader>f :execute "Ack " . expand("<cword>"). ' --ignore-dir '. 'bower_components --ignore-dir node_modules ' <Bar> cw<CR>
 
     ",g
         "map <Leader>g <Esc>:call ToggleGUINoise()<cr>
@@ -117,13 +116,13 @@
         nmap <Leader>bl :ls<cr>:b
 
     ",bp prev buffer
-        nmap <Leader>bp :bp<cr>
+        nmap <Leader>[ :bp<cr>
 
     ",bn next buffer
-        nmap <Leader>bn :bn<cr>
+        nmap <Leader>] :bn<cr>
 
     ",b
-        vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+        "vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
     ",nm  Toggle type of line numbers
        map <Leader>nm :call ToogleRelativeNumber()<cr>
