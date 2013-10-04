@@ -114,9 +114,9 @@ call vundle#rc()
 
 
 
-" Supertab
+ "Supertab
     "Perform all your vim insert mode completions with Tab    
-    Bundle 'ervandew/supertab.git'
+    "Bundle 'ervandew/supertab.git'
 
 " Command-T
     "The Command-T plug-in provides an extremely fast, intuitive mehanism for
@@ -133,7 +133,7 @@ call vundle#rc()
     "<C-f>       flush the cache (see |:CommandTFlush| for  details)
     "<C-c>       cancel  (dismisses file listing)
     Bundle 'wincent/Command-T.git'
-    let g:CommandTWildIgnore=&wildignore.',**/bower_components/*,node_modules/*'
+    let g:CommandTWildIgnore=&wildignore.',**/bower_components/*,node_modules/*,cordova/*,build/*'
 
 
 " vim-rooter
@@ -177,14 +177,16 @@ call vundle#rc()
     Bundle 'scrooloose/nerdcommenter.git'
     
 " Snippets
+    "Bundle 'SirVer/ultisnips'
     "Bundle 'git://github.com/msanders/snipmate.vim.git'
     Bundle 'git://github.com/garbas/vim-snipmate.git'
-    Bundle "MarcWeber/vim-addon-mw-utils"
-    Bundle "tomtom/tlib_vim"
+    Bundle 'MarcWeber/vim-addon-mw-utils'
+    Bundle 'tomtom/tlib_vim'
 
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+    let g:UltiSnipsSnippetsDir='~/.mydot/vim/snippets'
 
 
 
@@ -320,4 +322,7 @@ call vundle#rc()
 " C#
     Bundle 'OrangeT/vim-csharp'
 
-    Bundle 'Shougo/neocomplcache.vim'
+    "Bundle 'Shougo/neocomplcache.vim'
+
+
+    Bundle 'bling/vim-bufferline'

@@ -81,7 +81,7 @@
     ",d
          map <Leader>d :execute "Ack " . expand("<cword>") . '\\s*: -G **/bower_components/*' <Bar> cw<CR>
     ",f  Fast grep грепает в текущей директории по слову, на котором стоит курсор
-         map <Leader>f :execute "Ack " . expand("<cword>"). ' --ignore-dir '. 'bower_components --ignore-dir node_modules ' <Bar> cw<CR>
+         map <Leader>f :execute "Ack " . expand("<cword>"). ' --ignore-dir bower_components --ignore-dir node_modules --ignore-dir cordova --ignore-dir build ' <Bar> cw<CR>
 
     ",g
         "map <Leader>g <Esc>:call ToggleGUINoise()<cr>
@@ -255,3 +255,6 @@
 "nnoremap <leader>gpp :Git push<CR>
 "nnoremap <leader>gpm :Git push origin master<CR>
 
+
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
