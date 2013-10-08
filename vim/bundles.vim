@@ -116,7 +116,7 @@ call vundle#rc()
 
  "Supertab
     "Perform all your vim insert mode completions with Tab    
-    "Bundle 'ervandew/supertab.git'
+    Bundle 'ervandew/supertab.git'
 
 " Command-T
     "The Command-T plug-in provides an extremely fast, intuitive mehanism for
@@ -322,7 +322,7 @@ call vundle#rc()
 " C#
     Bundle 'OrangeT/vim-csharp'
 
-    "Bundle 'Shougo/neocomplcache.vim'
+    Bundle 'Shougo/neocomplcache.vim'
 
 
     Bundle 'bling/vim-bufferline'
