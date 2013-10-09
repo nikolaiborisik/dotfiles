@@ -92,7 +92,7 @@
     "Changes Vim working directory to project root
         Bundle 'airblade/vim-rooter.git'
            
-        Bundle 'vim-scripts/taglist.vim.git'
+        "Bundle 'vim-scripts/taglist.vim.git'
 
         Bundle 'majutsushi/tagbar'
 
