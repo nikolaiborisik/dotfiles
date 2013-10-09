@@ -92,3 +92,15 @@ snippet fi
 	${1:function_name}(${2:arguments});
 snippet aaa
 	test();
+
+snippet stview
+	Ext.define('CP.view.${1}', {
+		extend: 'Ext.Panel',
+		xtype: '${2}',
+		requires: [
+		],
+		config: {
+			items: [
+			]
+		}
+	});	

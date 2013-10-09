@@ -7,6 +7,14 @@
 "'. - перейти к последнему месту, где производилось редактирование
 "D - удалить от текущей позиции до конца строки
 "
+"vi" for double quotes
+"vi' for single quotes
+"vib if the cursor is inside the parenthesis block
+"gi Go to last edited location (very useful if you performed some searching and than want go back to edit)
+
+"* and # search for the word under the cursor forward/backward.
+"g; jump back to last edited position.
+"C change remaining part of line.
 " with LEADER
     let mapleader = "," " мапим <Leader> на запятую. По умолчанию <Leader> это обратный слэш \
 
@@ -14,24 +22,23 @@
         nmap <Leader>1 :NERDTreeToggle<CR>
 
     ",2
-        nmap <Leader>2 :GundoToggle<CR> 
+        nmap <Leader>2 :GundoToggle<CR>
     ",3
         nmap <Leader>3 :TagbarOpenAutoClose<CR>
-    
-    ",4 
+
+    ",4
         nmap <Leader>4 :Gstatus<CR>
 
-    ",5 
+    ",5
         nmap <Leader>5 :JSHint<CR>
 
-    ",6 
+    ",6
         nmap <Leader>6 :Extradite<CR>
-    ",6 TodoList
-        map <unique> <Leader>7 <Plug>TaskList
+
     ",q quit
         map <Leader>q :q<CR>
     ",w start webstorm
-        map <Leader>w :execute "!ws %:p ".line(".")<CR>       
+        "map <Leader>ww :execute "!ws %:p ".line(".")<CR>
 
     ",e
         map <Leader>e <C-w>w
@@ -58,7 +65,7 @@
     ",o
         map <leader>o :call ToggleStatusLine()<CR>
 
-    
+
     ",p  Вставлять код извне без этой строчки проблематично, без нее начитается
         " бешеный реформат кода
         set pastetoggle=<Leader>p
@@ -66,20 +73,19 @@
     ",a
         nmap <leader>a: :Tabularize /:\zs<CR>
         vmap <leader>a: :Tabularize /:\zs<CR>
-        
+
     ",s
         nnoremap <leader>s :%s//<left>
         vnoremap <leader>s :s//<left>
 
     ",d
-
-         map <Leader>d :execute "Ack " . expand("<cword>") . '\\s*:' <CR>
+         map <Leader>d :execute "Ack " . expand("<cword>") . '\\s*: -G **/bower_components/*' <Bar> cw<CR>
     ",f  Fast grep грепает в текущей директории по слову, на котором стоит курсор
-         map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
+         map <Leader>f :execute "Ack " . expand("<cword>"). ' --ignore-dir bower_components --ignore-dir node_modules --ignore-dir cordova --ignore-dir build ' <Bar> cw<CR>
 
     ",g
         "map <Leader>g <Esc>:call ToggleGUINoise()<cr>
-    
+
     " Создаем пустой сплит относительно текущего
     ",h
         nmap <Leader>h :leftabove  vnew<CR>
@@ -98,7 +104,7 @@
 
     ",x
 
-    ",c  
+    ",c
         vnoremap <silent> <Leader>c :s/\v\C(([a-z]+)([A-Z]))/\2_\l\3/g<CR>
 
 
@@ -110,13 +116,13 @@
         nmap <Leader>bl :ls<cr>:b
 
     ",bp prev buffer
-        nmap <Leader>bp :bp<cr>
+        nmap <Leader>[ :bp<cr>
 
     ",bn next buffer
-        nmap <Leader>bn :bn<cr>
+        nmap <Leader>] :bn<cr>
 
     ",b
-        vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+        "vmap <Leader>b :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
     ",nm  Toggle type of line numbers
        map <Leader>nm :call ToogleRelativeNumber()<cr>
@@ -130,7 +136,7 @@
     " < >
         vnoremap < <gv
         vnoremap > >gv
-    
+
     " Перемещение строк
         " переместить одну строку
         nmap <C-S-k> ddkP
@@ -249,3 +255,6 @@
 "nnoremap <leader>gpp :Git push<CR>
 "nnoremap <leader>gpm :Git push origin master<CR>
 
+
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger

@@ -10,14 +10,14 @@ config focusCheckWidthMax 3000
 
 # Resize Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-bind right:ctrl resize +10% +0
-bind left:ctrl  resize -10% +0
-bind up:ctrl    resize +0   -10%
-bind down:ctrl  resize +0   +10%
-bind right:alt  resize -10% +0 bottom-right
-bind left:alt   resize +10% +0 bottom-right
-bind up:alt     resize +0   +10% bottom-right
-bind down:alt   resize +0   -10% bottom-right
+bind right:ctrl resize +5% +0
+bind left:ctrl  resize -5% +0
+bind up:ctrl    resize +0   -5%
+bind down:ctrl  resize +0   +5%
+bind right:alt  resize -5% +0 bottom-right
+bind left:alt   resize +5% +0 bottom-right
+bind up:alt     resize +0   +5% bottom-right
+bind down:alt   resize +0   -5% bottom-right
 
 # Push Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
@@ -31,16 +31,13 @@ bind left:cmd push left bar-resize:screenSizeX/2
 
 # Nudge Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-bind right:ctrl;alt nudge +1% +0
-bind left:ctrl;alt  nudge -1% +0
+bind right:ctrl;alt nudge +2% +0
+bind left:ctrl;alt  nudge -2% +0
 bind up:ctrl;alt    nudge +0   -2%
 bind down:ctrl;alt  nudge +0   +2%
 
 # Throw Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-bind pad1:ctrl;alt      throw 2 resize
-bind pad2:ctrl;alt      throw 1 resize
-bind pad3:ctrl;alt      throw 0 resize
 bind right:ctrl;alt;cmd throw right resize
 bind left:ctrl;alt;cmd  throw left  resize
 bind up:ctrl;alt;cmd    throw up    resize
@@ -58,14 +55,49 @@ bind down:ctrl;alt;cmd  throw down  resize
 
 
 # Window Hints
-bind .:cmd hint ASDFJ
+config windowHintsShowIcons true
+config windowHintsSpread true
+config windowHintsIgnoreHiddenWindows false
+
+bind .:cmd hint ASDFJHJKL
 
 # Switch currently doesn't work well so I'm commenting it out until I fix it.
 #bind tab:ctrl switch
 
 # Grid
 bind esc:ctrl grid  padding:5 0:8,6 
-bind f6 hide all-but:current
+bind f6 sequence hide all-but:current > move screenOriginX+150;screenOriginY+75 screenSizeX-300;screenSizeY-150
 bind f7 show all
 bind f8 move screenOriginX;screenOriginY screenSizeX;screenSizeY
 
+
+alias monitor-mac 1
+alias monitor-lg 0
+alias lg-full move screenOriginX;screenOriginY screenSizeX;screenSizeY ${monitor-lg}
+alias lg-lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY ${monitor-lg}
+alias lg-righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY ${monitor-lg}
+alias lg-leftthird move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor-lg}
+alias lg-righttwothirds move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-lg}
+alias lg-leftfifth move screenOriginX;screenOriginY screenSizeX/5;screenSizeY ${monitor-lg}
+alias lg-rightfourfifths move (screenOriginX+screenSizeX/5)+45;screenOriginY (4*screenSizeX/5)-45;screenSizeY ${monitor-lg}
+
+alias lg-right-2-3 move screenOriginX+screenSizeX/3;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-lg}
+alias lg-left-2-3 move screenOriginX;screenOriginY 2*screenSizeX/3;screenSizeY ${monitor-lg}
+alias lg-right-1-3 move screenOriginX+2*screenSizeX/3;screenOriginY screenSizeX/3;screenSizeY ${monitor-lg}
+alias lg-left-1-3 move screenOriginX;screenOriginY screenSizeX/3;screenSizeY ${monitor-lg}
+
+
+
+layout work1 'MacVim':REPEAT ${lg-right-2-3}
+layout work1 'Google Chrome':REPEAT ${lg-left-1-3}
+
+layout work2 'MacVim':REPEAT ${lg-right-1-3}
+layout work2 'Google Chrome':REPEAT ${lg-left-2-3}
+
+alias hyper ctrl;alt;cmd
+bind i:${hyper} sequence  hide all-but:'MacVim' > show 'Google Chrome','MacVim' > layout work1
+
+bind o:${hyper} sequence  hide all-but:'Google Chrome' > show 'Google Chrome','MacVim' > layout work2 > hide 'iTerm'> hide 'Skype' > hide 'Preview'
+
+bind r:${hyper} relaunch
+bind u:${hyper} undo
