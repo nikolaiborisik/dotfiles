@@ -25,6 +25,17 @@ function! ToggleGUINoise()
     endif
 endfunction
 
+let g:toglesplitstatus = 0
+function! ToggleSplitSize()
+   if g:toglesplitstatus == 0
+       let g:toglesplitstatus = 1
+       exec(':vertical-resize widest')
+    else 
+        let g:toglesplitstatus = 0
+        exec(':vertical resize  80')
+    end
+endfunction
+
 
 let g:relativenumber = 0
 function! ToogleRelativeNumber()

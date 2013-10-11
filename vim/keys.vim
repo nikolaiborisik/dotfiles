@@ -102,6 +102,8 @@
 
     ",z
 
+    
+        nmap<Leader>z :call ToggleSplitSize()<cr>
     ",x
 
     ",c
@@ -136,6 +138,10 @@
     " < >
         vnoremap < <gv
         vnoremap > >gv
+
+    "<>
+        nnoremap > :vertical resize +1<CR>
+        nnoremap < :vertical resize -1<CR>
 
     " Перемещение строк
         " переместить одну строку
