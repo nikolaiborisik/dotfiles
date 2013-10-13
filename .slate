@@ -66,7 +66,7 @@ bind .:cmd hint ASDFJHJKL
 
 # Grid
 bind esc:ctrl grid  padding:5 0:8,6 
-bind f6 sequence hide all-but:current > move screenOriginX+150;screenOriginY+75 screenSizeX-300;screenSizeY-150
+bind f6 sequence hide all-but:current > move screenOriginX+150;screenOriginY+20 screenSizeX-300;screenSizeY-40
 bind f7 show all
 bind f8 move screenOriginX;screenOriginY screenSizeX;screenSizeY
 
