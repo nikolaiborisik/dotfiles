@@ -58,3 +58,9 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false &&
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true &&
     killall Finder"
 
+
+# Sencha
+alias sab='sencha app build'
+alias sabn='sencha app build native'
+alias sabnr='sencha app build -run native'
+alias cdcpmobile='cd ~/Dropbox/Project/CPmobile/CP/'
