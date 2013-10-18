@@ -48,7 +48,7 @@ var appInDistractionMode = function(appName){
     hideApp('all-but:current');
     distractionMode.run();
 
-}
+};
 
 slate.bind('j:ctrl;alt;cmd', function(win){
     appInDistractionMode('MacVim');
@@ -61,5 +61,15 @@ slate.bind('k:ctrl;alt;cmd', function(win){
 slate.bind('l:ctrl;alt;cmd', function(win){
     appInDistractionMode('iTerm');
 });
+
+slate.bind('h:ctrl;alt;cmd', function(win){
+    appInDistractionMode('Firefox');
+});
+
+slate.bind('b:ctrl;alt;cmd', function(win){
+    appInDistractionMode('Photoshop');
+});
+
+
 
 

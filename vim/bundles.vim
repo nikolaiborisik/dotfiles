@@ -25,7 +25,7 @@ call vundle#rc()
     syntax enable
     " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized#comment11144700_7278548
     let g:solarized_termcolors=16
-    set background=light
+    set background=dark
     try
         colorscheme solarized
     catch /^Vim\%((\a\+)\)\=:E185/
@@ -271,7 +271,7 @@ call vundle#rc()
     "and you can use the ":CopyFileName" command to copy file name  clipboard.
     Bundle 'https://github.com/taku-o/vim-copypath.git'
 
-    "Bundle 'Valloric/YouCompleteMe'
+    Bundle 'Valloric/YouCompleteMe'
 
 
 " HTML/HAML
