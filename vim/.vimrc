@@ -226,5 +226,5 @@ au FileType javascript set dictionary+=$HOME/.mydot/vim/dict/node.dict
 
 
 
-set gfn=Menlo\ Regular\ for\ Powerline:h13
+set gfn=Anonymous\ Pro\ for\ Powerline:h13
 "autocm BufEnter * if expand('%:p') !~ '://' | cd %:p:h | endif

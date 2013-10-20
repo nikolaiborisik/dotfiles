@@ -271,7 +271,7 @@ call vundle#rc()
     "and you can use the ":CopyFileName" command to copy file name  clipboard.
     Bundle 'https://github.com/taku-o/vim-copypath.git'
 
-    Bundle 'Valloric/YouCompleteMe'
+    "Bundle 'Valloric/YouCompleteMe'
 
 
 " HTML/HAML
@@ -326,3 +326,6 @@ call vundle#rc()
 
 
     Bundle 'bling/vim-bufferline'
+
+" ObjectC
+    Bundle 'https://github.com/eraserhd/vim-ios'
