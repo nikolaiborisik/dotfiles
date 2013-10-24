@@ -30,6 +30,8 @@ var focusApp = function(appName){
     S.operation('focus', {app : appName}).run();
 };
 
+
+
 slate.bind('1:ctrl', function(win){
     showApp('Google Chrome');
     showApp('MacVim');
@@ -49,25 +51,6 @@ var appInDistractionMode = function(appName){
     hideApp('all-but:current');
 };
 
-//slate.bind('j:ctrl;alt;cmd', function(win){
-    //appInDistractionMode('MacVim');
-//});
-
-//slate.bind('k:ctrl;alt;cmd', function(win){
-    //appInDistractionMode('Google Chrome');
-//});
-
-//slate.bind('l:ctrl;alt;cmd', function(win){
-    //appInDistractionMode('iTerm');
-//});
-
-//slate.bind('h:ctrl;alt;cmd', function(win){
-    //appInDistractionMode('Firefox');
-//});
-
-//slate.bind('b:ctrl;alt;cmd', function(win){
-    //appInDistractionMode('Photoshop');
-//});
 
 var appBinds = [
     ['j', 'MacVim' ],
@@ -76,7 +59,10 @@ var appBinds = [
     ['h', 'Firefox'],
     ['b', 'Photoshop'],
     ['n', 'Finder'],
-    ['y', 'Xcode']
+    ['y', 'Xcode'],
+    ['p', 'SourceTree'],
+    ['m', 'Safari'],
+    ['g', 'iOS Simulator']
 ];
 
 for(var i = 0, len = appBinds.length; i < len; i++){
