@@ -26,8 +26,8 @@ bind left:ctrl;shift  push left  bar-resize:screenSizeX/3
 bind up:ctrl;shift    push up    bar-resize:screenSizeY/2
 bind down:ctrl;shift  push down  bar-resize:screenSizeY/2
 
-bind right:cmd push right bar-resize:screenSizeX/2
-bind left:cmd push left bar-resize:screenSizeX/2
+#bind right:cmd push right bar-resize:screenSizeX/2
+#bind left:cmd push left bar-resize:screenSizeX/2
 
 # Nudge Bindings
 # NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
@@ -95,9 +95,9 @@ layout work2 'MacVim':REPEAT ${lg-right-1-3}
 layout work2 'Google Chrome':REPEAT ${lg-left-2-3}
 
 alias hyper ctrl;alt;cmd
-bind p:${hyper} sequence  hide all-but:'MacVim' > show 'Google Chrome' > layout work1
+#bind p:${hyper} sequence  hide all-but:'MacVim' > show 'Google Chrome' > layout work1
 
-bind o:${hyper} sequence  hide all-but:'Google Chrome' > show 'MacVim' > layout work2 > hide 'iTerm'> hide 'Skype' > hide 'Preview'
+#bind o:${hyper} sequence  hide all-but:'Google Chrome' > show 'MacVim' > layout work2 > hide 'iTerm'> hide 'Skype' > hide 'Preview'
 
 bind r:${hyper} relaunch
 bind u:${hyper} undo
