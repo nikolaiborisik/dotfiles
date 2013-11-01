@@ -64,3 +64,4 @@ alias sab='sencha app build'
 alias sabn='sencha app build native'
 alias sabnr='sencha app build -run native'
 alias cdcpmobile='cd ~/Dropbox/Project/CPmobile/CP/'
+alias chr="open -a Google\ Chrome --args --disable-web-security"
