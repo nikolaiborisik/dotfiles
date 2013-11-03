@@ -38,7 +38,7 @@
     ",q quit
         map <Leader>q :q<CR>
     ",w start webstorm
-        "map <Leader>ww :execute "!ws %:p ".line(".")<CR>
+        map <Leader>ww :execute "!ws %:p ".line(".")<CR>
 
     ",e
         map <Leader>e <C-w>w
