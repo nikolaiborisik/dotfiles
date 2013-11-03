@@ -56,9 +56,6 @@
         move : function(x, y, w, h){
             slateEx.moveOp(x, y, w, h).run();
         },
-
-
-
        
         twoAppHorisontal : function(app1, app2, app1Width){
             slateEx.focusApp(app1);
@@ -116,9 +113,6 @@
                 })(b[0], b[1]);
             }
         }
-
-
-
     };
     
     slateEx.leftHalf =  slateEx.moveOp(0, 0, 0.5, 1);
@@ -165,21 +159,60 @@
     });
 
 
-
-    slate.bind('1:ctrl;alt;cmd', function(){
-        if(combo){
-            if(comboApp.length === 2){
-                slateEx.twoAppHorisontal(comboApp[0], comboApp[1], 0.4);
-                combo = false;
-            }
-        }else{
-            slateEx.twoAppHorisontal('Google Chrome', 'MacVim', 0.4);
+    var layouts = [
+        {
+            key : 1,
+            apps : ['Google Chrome', 'MacVim'],
+            layout : 'twoAppHorisontal',
+            params : [0.4]
+        },
+        {
+            key : 2,
+            apps : ['Google Chrome', 'MacVim'],
+            layout : 'twoAppHorisontal',
+            params : [0.25]
         }
-    });
+    ];
+    
+    for(var i = 0; i < layouts.length; i++){
+        var l = layouts[i];
+        (function(l){
+            slate.bind(l.key + ':ctrl;alt;cmd', function(){
+                var appsCount = l.apps.length;
+                var params;
+                if(combo && appsCount === comboApp.length){
+                    params = comboApp.concat(l.params);
+                }else{
+                    params = l.apps.concat(l.params);
+                }
+                slateEx[l.layout].apply(null, params);
+            });
 
-    slate.bind('2:ctrl;alt;cmd', function(){
-        slateEx.twoAppHorisontal('Google Chrome', 'MacVim', 0.6);
-    });
+        }(l));
+   }
+
+    //slate.bind('1:ctrl;alt;cmd', function(){
+        //if(combo){
+            //if(comboApp.length === 2){
+                //slateEx.twoAppHorisontal(comboApp[0], comboApp[1], 0.4);
+                //combo = false;
+            //}
+        //}else{
+            //slateEx.twoAppHorisontal('Google Chrome', 'MacVim', 0.4);
+        //}
+    //});
+
+    //slate.bind('2:ctrl;alt;cmd', function(){
+        //var app1 = "Google Chrome", 
+            //app2 = "MacVim";
+
+        //if(combo && comboApp.length === 2){
+            //app1 = comboApp[0];
+            //app2 = comboApp[1];
+        //}
+
+        //slateEx.twoAppHorisontal(app1, app2, 0.6);
+    //});
 
     slate.bind('3:ctrl;alt;cmd', function(){
         slateEx.twoAppHorisontal('Skype', 'Google Chrome', 0.3);
