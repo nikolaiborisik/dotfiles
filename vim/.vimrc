@@ -122,9 +122,8 @@
         " {zR, zM} - {открыть, скрыть} все складки.
         " from https://github.com/sjl/dotfiles/blob/master/vim/.vimrc
         set foldcolumn=0        " Ширина строки где располагается фолдинг
-        set foldmethod=syntax   " Фолдинг по отступам
+        set foldmethod=indent   " Фолдинг по отступам
         set foldnestmax=10      " Глубина фолдинга 10 уровней
-        set nofoldenable        " Не фолдить по умолчанию
         set foldlevel=1         " This is just what i use
         set fillchars="fold: "  " remove the extrafills --------
         let javaScript_fold=1 " JavaScript

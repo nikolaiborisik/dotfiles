@@ -264,3 +264,5 @@
 
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
+
+vnoremap // y/<C-R>"<CR>

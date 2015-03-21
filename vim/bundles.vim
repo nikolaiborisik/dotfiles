@@ -25,7 +25,7 @@ call vundle#rc()
     syntax enable
     " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized#comment11144700_7278548
     let g:solarized_termcolors=16
-    set background=dark
+    set background=light
     try
         colorscheme solarized
     catch /^Vim\%((\a\+)\)\=:E185/
@@ -132,8 +132,8 @@ call vundle#rc()
     "<C-k>       select previous file in the   file listing
     "<C-f>       flush the cache (see |:CommandTFlush| for  details)
     "<C-c>       cancel  (dismisses file listing)
-    Bundle 'wincent/Command-T.git'
-    let g:CommandTWildIgnore=&wildignore.',**/bower_components/*,node_modules/*,cordova/*,build/*'
+    "Bundle 'wincent/Command-T.git'
+    "let g:CommandTWildIgnore=&wildignore.',**/bower_components/*,node_modules/*,cordova/*,build/*'
 
 
 " vim-rooter
@@ -308,7 +308,7 @@ call vundle#rc()
 " Python/Django
     Bundle 'git://github.com/fs111/pydoc.vim.git'
     Bundle 'https://github.com/klen/python-mode.git'
-
+Bundle 'http://github.com/kien/ctrlp.vim'
 
 " Ruby/Rails
     "Bundle 'git://github.com/vim-ruby/vim-ruby.git'
