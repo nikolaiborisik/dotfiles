@@ -1,7 +1,7 @@
 (function(){
     window.slateEx = {
         buildXPositionStr : function(x){
-            return 'screenOriginX+screenSizeX*'+x; 
+            return 'screenOriginX+screenSizeX*'+x;
         },
 
         buildYPositionStr : function(y){
@@ -56,7 +56,7 @@
         move : function(x, y, w, h){
             slateEx.moveOp(x, y, w, h).run();
         },
-       
+
         twoAppHorisontal : function(app1, app2, app1Width){
             slateEx.focusApp(app1);
             slateEx.moveOp(0, 0, app1Width, 1).run();
@@ -114,7 +114,7 @@
             }
         }
     };
-    
+
     slateEx.leftHalf =  slateEx.moveOp(0, 0, 0.5, 1);
     slateEx.rightHalf = slateEx.moveOp(0.5, 0, 0.5, 1);
     slateEx.left1_3 = slateEx.moveOp(0, 0, 0.25, 1);
@@ -122,17 +122,32 @@
     slateEx.left2_5 = slateEx.moveOp(0, 0, 0.4, 1);
     slateEx.right3_5 = slateEx.moveOp(0.4, 0, 0.6, 1);
 
+    var CHROME = 'Google Chrome',
+         MACVIM = 'MacVim',
+         ITERM = 'iTerm',
+         FIREFOX = 'Firefox',
+         PHOTOSHOP = 'PHOTOSHOP',
+         FINDER = 'Finder',
+         XCODE = 'Xcode',
+         SOURCETREE = 'SourceTree',
+         SKYPE = 'Skype',
+         IOSSIMULATOR = 'iOS Simulator',
+         WESSTORM = 'WebStorm',
+         MUCOMMANDER = 'muCommander',
+         PREVIEW = 'Preview',
+         MAIL = 'Mail',
+         ATOM = 'Atom';
 
 
 
-   
-    
+
+
     var appBinds = [
-        ['v', 'MacVim' ],
-        ['c', 'Google Chrome'],
-        ['i', 'iTerm'],
-        ['m', 'Firefox'],
-        ['p', 'Photoshop'],
+        ['v', MACVIM ],
+        ['c', CHROME],
+        ['i', ITERM],
+        ['m', FIREFOX],
+        ['p', PHOTOSHOP],
         ['f', 'Finder'],
         ['x', 'Xcode'],
         ['t', 'SourceTree'],
@@ -141,16 +156,14 @@
         ['w', 'WebStorm'],
         ['n', 'muCommander'],
         ['a', 'Preview'],
-        ['z', 'Mail']
+        ['z', 'Mail'],
+        ['l', ATOM]
     ];
 
     slateEx.bindAppsKeys(appBinds, 'ctrl;alt;cmd', 'ctrl;alt');
 
-  
-
-
     slate.bind('right:cmd', function(){
-        slateEx.moveOp(0, 0, 0.5, 1);
+        slateEx.moveOp(0, 0, 0.8, 1);
     });
 
 
@@ -158,6 +171,12 @@
          slateEx.left2_5.run();
     });
 
+    slate.bind('6:ctrl;alt;cmd', function(){
+       slateEx.moveOp(0, 0, 1, 0.75).run();
+       slateEx.focusApp('iTerm');
+       slateEx.moveOp(0, 0.75, 1, 0.25).run();
+      //  slateEx.moveOp(0, 0, 0.5, 1).run();
+    });
 
     var layouts = [
         {
@@ -173,7 +192,7 @@
             params : [0.25]
         }
     ];
-    
+
     for(var i = 0; i < layouts.length; i++){
         var l = layouts[i];
         (function(l){
@@ -203,7 +222,7 @@
     //});
 
     //slate.bind('2:ctrl;alt;cmd', function(){
-        //var app1 = "Google Chrome", 
+        //var app1 = "Google Chrome",
             //app2 = "MacVim";
 
         //if(combo && comboApp.length === 2){
@@ -222,7 +241,7 @@
         slateEx.threeAppHorisontal('Google Chrome', 'iTerm', 'MacVim', 0.4, 0.3);
     });
     slate.bind('5:ctrl;alt;cmd', function(){
-        slateEx.threeAppH1V2('Google Chrome', 'iTerm', 'MacVim', 0.4, 0.3);
+        slateEx.threeAppH1V2('Google Chrome', 'iTerm', 'MacVim', 0.5, 0.5);
     });
 
     var combo = false;
@@ -235,8 +254,7 @@
         setTimeout(function(){combo = false;}, 1500);
     });
 
-   
+
 
 
 })();
-
