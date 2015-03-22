@@ -1,18 +1,18 @@
 (function(){
     window.slateEx = {
-        buildXPositionStr : function(x){
+        buildXProcentPositionStr : function(x){
             return 'screenOriginX+screenSizeX*'+x;
         },
 
-        buildYPositionStr : function(y){
+        buildYProcentPositionStr : function(y){
             return 'screenOriginY + screenSizeY*'+y;
         },
 
-        buildWidthStr : function(size){
+        buildProcentWidthStr : function(size){
             return 'screenSizeX*' + size;
         },
 
-        buildHeightStr : function(size){
+        buildProcentHeightStr : function(size){
             return 'screenSizeY*'+ size;
         },
 
@@ -35,21 +35,19 @@
             "height" : "screenSizeY"
         }),
 
-        distractionModeWidth : 0.95,
-        distractionMoveHeight : 0.95,
         distractionMode  : slate.operation("move", {
-            "x" : "screenOriginX + screenSizeX*0.025",
-            "y" : "screenOriginY + 20",
-            "width" : "screenSizeX - screenSizeX*0.05",
-            "height" : "screenSizeY-40"
+            "x" : "screenOriginX + 5",
+            "y" : "screenOriginY + 5",
+            "width" : "screenSizeX - 10",
+            "height" : "screenSizeY- 10"
         }),
 
         moveOp : function(x, y, w, h){
             return slate.operation('move', {
-                x : slateEx.buildXPositionStr(x),
-                y : slateEx.buildYPositionStr(y),
-                width : slateEx.buildWidthStr(w),
-                height : slateEx.buildHeightStr(h)
+                x : slateEx.buildXProcentPositionStr(x),
+                y : slateEx.buildYProcentPositionStr(y),
+                width : slateEx.buildProcentWidthStr(w),
+                height : slateEx.buildProcentHeightStr(h)
             });
         },
 
@@ -59,32 +57,32 @@
 
         twoAppHorisontal : function(app1, app2, app1Width){
             slateEx.focusApp(app1);
-            slateEx.moveOp(0, 0, app1Width, 1).run();
+            slateEx.move(0, 0, app1Width, 1);
 
             slateEx.focusApp(app2);
-            slateEx.moveOp(app1Width, 0, 1 - app1Width, 1).run();
+            slateEx.move(app1Width, 0, 1 - app1Width, 1);
         },
 
         threeAppHorisontal : function(app1, app2, app3, app1Width, app2Width){
             slateEx.focusApp(app1);
-            slateEx.moveOp(0, 0, app1Width, 1).run();
+            slateEx.move(0, 0, app1Width, 1);
 
             slateEx.focusApp(app2);
-            slateEx.moveOp(app1Width, 0, app2Width, 1).run();
+            slateEx.move(app1Width, 0, app2Width, 1);
 
             slateEx.focusApp(app3);
-            slateEx.moveOp(app1Width + app2Width, 0, 1 - app1Width - app2Width, 1).run();
+            slateEx.move(app1Width + app2Width, 0, 1 - app1Width - app2Width, 1);
         },
 
         threeAppH1V2 : function(app1, app2, app3, app1Width, app2Height){
             slateEx.focusApp(app1);
-            slateEx.moveOp(0, 0, app1Width, 1).run();
+            slateEx.move(0, 0, app1Width, 1);
 
             slateEx.focusApp(app2);
-            slateEx.moveOp(app1Width, 0, 1 - app1Width, app2Height).run();
+            slateEx.move(app1Width, 0, 1 - app1Width, app2Height);
 
             slateEx.focusApp(app3);
-            slateEx.moveOp(app1Width, app2Height, 1 -app1Width, 1 - app2Height).run();
+            slateEx.move(app1Width, app2Height, 1 -app1Width, 1 - app2Height);
         },
 
         appInDistractionMode : function(appName){
@@ -121,8 +119,7 @@
     slateEx.right2_3 = slateEx.moveOp(0.25, 0, 0.75, 1);
     slateEx.left2_5 = slateEx.moveOp(0, 0, 0.4, 1);
     slateEx.right3_5 = slateEx.moveOp(0.4, 0, 0.6, 1);
-
-    var CHROME = 'Google Chrome',
+var CHROME = 'Google Chrome',
          MACVIM = 'MacVim',
          ITERM = 'iTerm',
          FIREFOX = 'Firefox',
@@ -137,10 +134,6 @@
          PREVIEW = 'Preview',
          MAIL = 'Mail',
          ATOM = 'Atom';
-
-
-
-
 
     var appBinds = [
         ['v', MACVIM ],
@@ -157,7 +150,7 @@
         ['n', 'muCommander'],
         ['a', 'Preview'],
         ['z', 'Mail'],
-        ['l', ATOM]
+        ['y', ATOM]
     ];
 
     slateEx.bindAppsKeys(appBinds, 'ctrl;alt;cmd', 'ctrl;alt');
@@ -210,29 +203,6 @@
         }(l));
    }
 
-    //slate.bind('1:ctrl;alt;cmd', function(){
-        //if(combo){
-            //if(comboApp.length === 2){
-                //slateEx.twoAppHorisontal(comboApp[0], comboApp[1], 0.4);
-                //combo = false;
-            //}
-        //}else{
-            //slateEx.twoAppHorisontal('Google Chrome', 'MacVim', 0.4);
-        //}
-    //});
-
-    //slate.bind('2:ctrl;alt;cmd', function(){
-        //var app1 = "Google Chrome",
-            //app2 = "MacVim";
-
-        //if(combo && comboApp.length === 2){
-            //app1 = comboApp[0];
-            //app2 = comboApp[1];
-        //}
-
-        //slateEx.twoAppHorisontal(app1, app2, 0.6);
-    //});
-
     slate.bind('3:ctrl;alt;cmd', function(){
         slateEx.twoAppHorisontal('Skype', 'Google Chrome', 0.3);
     });
@@ -244,6 +214,14 @@
         slateEx.threeAppH1V2('Google Chrome', 'iTerm', 'MacVim', 0.5, 0.5);
     });
 
+    slate.bind('h:ctrl;alt;cmd', function(){
+       slateEx.move(0, 0, 0.5, 1);
+   });
+
+   slate.bind('l:ctrl;alt;cmd', function(){
+      slateEx.move(0.5, 0, 0.5, 1);
+   });
+
     var combo = false;
     var comboKeys = '';
     var comboApp = [];
@@ -253,8 +231,5 @@
         comboApp = [];
         setTimeout(function(){combo = false;}, 1500);
     });
-
-
-
 
 })();
