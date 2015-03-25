@@ -58,12 +58,16 @@
       }),
 
       moveOp = function(x, y, w, h) {
-         return slate.operation('move', {
+         return slate.operation('move', createMoveObj(x, y, w, h));
+      },
+
+      createMoveObj = function(x, y, w, h){
+         return  {
             x: buildXProcentPositionStr(x),
             y: buildYProcentPositionStr(y),
             width: buildProcentWidthStr(w),
             height: buildProcentHeightStr(h)
-         });
+         };
       },
 
       move = function(x, y, w, h) {
@@ -97,7 +101,7 @@
          move(app1Width, 0, 1 - app1Width, app2Height);
 
          focusApp(app3);
-         move(app1Width, app2Height, 1 - app1Width, 1 - app2Height);
+         move(app1Width, app2Height*0.9, 1 - app1Width, 1 - app2Height*0.9);
       },
 
       appInDistractionMode = function(appName) {
@@ -150,6 +154,7 @@
    right2_3 = moveOp(0.25, 0, 0.75, 1);
    left2_5 = moveOp(0, 0, 0.4, 1);
    right3_5 = moveOp(0.4, 0, 0.6, 1);
+
    var CHROME = 'Google Chrome',
       MACVIM = 'MacVim',
       ITERM = 'iTerm',
@@ -166,6 +171,7 @@
       MAIL = 'Mail',
       ATOM = 'Atom';
 
+   var EDITOR = ATOM;
    var appBinds = [
       ['v', MACVIM],
       ['c', CHROME],
@@ -204,20 +210,26 @@
 
    var layouts = [{
       key: 1,
-      apps: ['Google Chrome', 'MacVim'],
+      apps: [CHROME, EDITOR],
       layout: 'H2',
       params: [0.5]
    }, {
       key: 2,
-      apps: ['Google Chrome', 'MacVim'],
+      apps: [CHROME, EDITOR],
       layout: 'H2',
       params: [0.35]
-   }];
+   },{
+      key: 3,
+      apps:[ CHROME, 'iTerm', EDITOR],
+      layout: 'H1V2',
+      params: [0.4, 0.3]
+   }
+   ];
 
    for (var i = 0; i < layouts.length; i++) {
       var l = layouts[i];
       (function(l) {
-         slate.bind(l.key + ':ctrl;alt;cmd', function() {
+         slate.bind(l.key +':' + hyper, function() {
             var appsCount = l.apps.length;
             var params;
             if (combo && appsCount === comboApp.length) {
@@ -235,9 +247,6 @@
       }(l));
    }
 
-   slate.bind('3:ctrl;alt;cmd', function() {
-      twoAppHorisontal('Skype', 'Google Chrome', 0.3);
-   });
 
    slate.bind('4:ctrl;alt;cmd', function() {
       threeAppHorisontal('Google Chrome', 'iTerm', 'MacVim', 0.4, 0.3);
@@ -281,6 +290,26 @@
          }
 
    };
+
+   slate.bind('/:' + hyper, function(){
+      var app = S.app();
+      S.log('pid : ' + app.pid());
+      S.log('name : ' + app.pid());
+      S.log('windows =>');
+      app.eachWindow(function(wnd){
+            S.log(wnd.title());
+            wnd.focus();
+            if(wnd.title().indexOf('Developer Tools') != -1){
+               var o = createMoveObj(0.5, 0, 0.5, 1);
+               var r = wnd.move(o);
+               S.log('res  tools ' + r);
+               S.log(o.x);
+            }else{
+               var r = wnd.move(createMoveObj(0, 0, 0.5, 1));
+               S.log('res ' + r);
+            }
+      });
+   });
 
    slate.bind(',:ctrl;alt;cmd', startCombo);
    slate.bind('.:ctrl;alt;cmd', swapComboAppSize);
