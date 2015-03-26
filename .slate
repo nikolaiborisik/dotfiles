@@ -15,8 +15,6 @@ bind left:ctrl;shift  push left  bar-resize:screenSizeX/3
 bind up:ctrl;shift    push up    bar-resize:screenSizeY/2
 bind down:ctrl;shift  push down  bar-resize:screenSizeY/2
 
-bind right:cmd push right bar-resize:screenSizeX/2
-bind left:cmd push left bar-resize:screenSizeX/2
 
 
 # Throw Bindings
